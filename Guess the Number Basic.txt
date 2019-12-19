@@ -1,0 +1,25 @@
+#---------------------------------------
+#Guessing game
+#---------------------------------------
+
+# Guessing a Random number - 
+import random
+
+
+def pick_random(num):
+    return random.randint(1, num)
+
+
+answer = ""
+random_number = pick_random(10)
+
+print("Hello user, you have to guess the correct number, 0-9\n")
+while answer != random_number:
+    answer = int(input("Please guess now: "))
+    if answer == random_number:
+        print("You are correct!")
+    elif answer > random_number:
+        print("Your guess is too high")
+    else:
+        print("Your guess is too low")
+

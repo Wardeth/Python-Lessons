@@ -1,0 +1,39 @@
+import random
+
+
+def pick_shoot(num):
+    return random.randint(1, num)
+
+
+win = 0
+user_pick = ""
+
+print("You've challenged me to rock paper scissors! \nPrepare to be destroyed!\n")
+while win == 0:
+    random_pick = pick_shoot(3)
+    user_pick = int(input("1 = Rock, 2 = Paper, 3 = Scissors\n"))
+    if user_pick == 1:
+        print("You picked Rock vs")
+        if random_pick == 3:
+            print("Scissors.\n You win!")
+            win += 1
+        elif random_pick == 2:
+            print("Paper.\n You lose!")
+        else:
+            print("Rock.\n Tie!")
+    elif user_pick == 2:
+        if random_pick == 1:
+            print("You win!")
+            win += 1
+        elif random_pick == 3:
+            print("You lose!")
+        else:
+            print("Tie!")
+    else:
+        if random_pick == 2:
+            print("You win!")
+            win += 1
+        elif random_pick == 1:
+            print("You lose!")
+        else:
+            print("Tie!")
